@@ -1,0 +1,1115 @@
+$toolbarWidth: 55px;
+$toolbarWidthLg: spacing(8);
+$toolIconSpace: spacing(2);
+$detailbarWidth: 550px;
+$controlbarHeight: 100px;
+
+// .geodeck-app {
+//   height: calc(100vh - 60px);
+//   width: 100vw;
+//   margin-top: -30px;
+//   position: relative;
+//   @include themify($themes) {
+//     color: themed("colorText");
+//   }
+//   & > div {
+//     padding-top: 30px;
+//   }
+//   .tool-bar {
+//     @include themify($themes) {
+//       background-color: themed("colorBackground");
+//     }
+//     height: calc(100vh - 60px);
+//     width: $toolbarWidth;
+//     position: absolute;
+//     left: 0px;
+//     top: 0px;
+//     display: flex;
+//     font-size: 24px;
+//     flex-direction: column;
+//     & > * {
+//       margin-bottom: $toolIconSpace;
+//       cursor: pointer;
+//     }
+//   }
+//   .geodeck-canvas {
+//     & > div {
+//       padding: 30px;
+//     }
+//     & > div:first-child {
+//       padding-top: 0px;
+//     }
+
+//     height: calc(100vh - 60px);
+//     width: 100%;
+//     padding-left: $toolbarWidth;
+//     padding-right: $detailbarWidth;
+//     background-color: #000014;
+//     display: flex;
+//     flex-direction: column;
+//     .chart-container {
+//       // background-color: yellow;
+//       width: 100%;
+//       flex: 1 1 0;
+//       display: flex;
+//       flex-direction: column;
+//       .chart {
+//         flex: 1 1 0;
+//         width: 100%;
+//         justify-content: center;
+//         align-items: center;
+//         // background-color: red;
+//       }
+//       & > div:last-child {
+//         // background-color: red;
+//         display: flex;
+//         justify-content: space-between;
+//       }
+//     }
+//     .control-bar {
+//       height: $controlbarHeight;
+//       // @include themify($themes) {
+//       //   background-color: themed('colorBackground');
+//       // }
+//       background-color: #262626;
+//       width: 100%;
+//       display: flex;
+//       & > div {
+//         flex: 1 1 0;
+//         border-right: 1px solid black;
+//         &.variables {
+//           display: flex;
+//           flex-direction: column;
+//           padding-left: 0px;
+//           .variable {
+//             cursor: pointer;
+//             &.disabled {
+//               cursor: not-allowed;
+//             }
+//           }
+//           cursor: pointer;
+//           span.anticon {
+//             padding-top: 2px;
+//             &.selected {
+//               @include themify($themes) {
+//                 color: themed("colorBubble");
+//               }
+//             }
+//           }
+//           div {
+//             display: flex;
+//             width: 100%;
+//             .variable {
+//               margin-right: auto;
+//             }
+//           }
+//         }
+//         padding: 15px;
+//       }
+//       .time-play {
+//         flex: 1 1 200px;
+//         display: flex;
+//         width: 100%;
+//         flex-direction: column;
+//         & > div {
+//           text-align: center;
+//         }
+//         .player-buttons {
+//           padding-left: 90px;
+//           padding-right: 90px;
+//           font-size: 32px;
+//           width: 100%;
+//           display: flex;
+//           justify-content: space-between;
+//           margin-bottom: 5px;
+//         }
+//         .player-input {
+//           display: flex;
+//           justify-content: center;
+//           margin-right: 15px;
+//           .time-input {
+//             position: relative;
+//             input {
+//               color: white;
+//               background-color: transparent;
+//               border: none;
+//               outline: 1px solid #d5d5d5;
+//               margin: 0px 5px;
+//               &:focus {
+//                 @include themify($themes) {
+//                   outline: 1px solid themed("colorBubble");
+//                 }
+//               }
+//             }
+//             &:after {
+//               color: #d5d5d5;
+//               position: absolute;
+//               right: 30px;
+//               top: 0px;
+//               content: "/120";
+//             }
+//           }
+//         }
+//         .rc-slider {
+//           margin-top: 15px;
+//         }
+//       }
+//       .simulatins {
+//         margin: 15px;
+//         border: 1px solid #d5d5d5;
+//         padding-top: 5px;
+//         border-radius: 4px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-start;
+//         align-items: flex-start;
+//         h5 {
+//           margin-bottom: 5px;
+//           font-weight: bold;
+//         }
+//         .sim-table {
+//           display: flex;
+//           justify-content: space-between;
+//           width: 60%;
+//           & > div {
+//             width: 45%;
+//           }
+//           .sim-row {
+//             cursor: pointer;
+//             width: 100%;
+//             .legend {
+//               margin-left: auto;
+//               background-color: red;
+//               margin-bottom: 5px;
+//             }
+//             display: flex;
+//             justify-content: space-between;
+//             span.anticon {
+//               padding-top: 2px;
+//               &.selected {
+//                 @include themify($themes) {
+//                   color: themed("colorBubble");
+//                 }
+//               }
+//             }
+//           }
+//         }
+//         .anticon {
+//           padding-top: 2px;
+//         }
+//       }
+//     }
+//   }
+//   .detail-bar {
+//     @include themify($themes) {
+//       background-color: themed("colorBackground");
+//     }
+//     height: calc(100vh - 60px);
+//     width: $detailbarWidth;
+//     position: absolute;
+//     right: 0px;
+//     top: 0px;
+//   }
+// }
+
+.geodeck-app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  & > * {
+    height: calc(100vh - #{$padding-container});
+  }
+
+  .tool-bar {
+    min-width: $toolbar-width;
+    max-width: $toolbar-width;
+    overflow-y: auto;
+    display: grid;
+    justify-items: center;
+    // align-items: center;
+    align-content: start;
+    grid-template-rows: repeat(10, min-content);
+    grid-gap: 0.5rem;
+    padding: 1rem 0;
+    @include themify($themes) {
+      background-color: lighten(themed("colorBackground"), 10%);
+    }
+
+    & > * {
+    }
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .geodeck-canvas {
+    flex: 0 1 auto;
+    // height: calc(100vh - #{$padding-container});
+    width: 100%;
+    // padding-left: $toolbarWidth;
+    // padding-right: $detailbarWidth;
+
+    canvas {
+      // change default styles for fix responsive bug
+      margin: 0 auto;
+      height: 100% !important;
+      display: block;
+    }
+
+    .recharts-wrapper {
+      // change default styles for fix responsive bug
+      // width: auto !important;
+    }
+
+    // .geodeck-canvas {
+    & > div {
+      // padding: 30px;
+    }
+    & > div:first-child {
+      // padding-top: 0px;
+    }
+
+    @include themify($themes) {
+      background-color: themed("colorBackgroundBody");
+    }
+    // background-color: #000014;
+    display: flex;
+    flex-direction: column;
+    .chart-container {
+      width: 100%;
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .chart {
+        flex: 1 1 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        & .a-enter-vr {
+          &.embedded {
+            bottom: spacing(5);
+          }
+        }
+      }
+      & > div:last-child {
+        display: flex;
+        justify-content: space-between;
+        // margin: 0 spacing(1) spacing(1);
+        position: absolute;
+        right: spacing(1);
+        left: spacing(1);
+        bottom: spacing(1);
+        z-index: 2;
+      }
+
+      .page-setting {
+        // display: flex;
+        & :not(:last-child) {
+          margin-right: spacing(1);
+        }
+
+        & .setting {
+          border-radius: 4px;
+          // height: 100%;
+          cursor: pointer;
+          @include themify($themes) {
+            color: $active-gray;
+            border-color: $active-gray;
+            background-color: themed("colorBackgroundBody");
+          }
+        }
+
+        .active {
+          @include themify($themes) {
+            border-color: $active-gray !important;
+            color: themed("colorBubble");
+          }
+        }
+      }
+    }
+    .control-bar {
+      // height: $controlbarHeight;
+      color: $active-gray;
+      padding: 14px 0; // flex-basis = 2 * padding left/right
+      width: 100%;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 1fr min-content 1fr min-content 1fr;
+      justify-content: space-between;
+
+      flex: 0 1 20%;
+      @include full-screen {
+        flex: 0 1 17%;
+      }
+      @include retina {
+        flex: 0 1 17%;
+      }
+
+      @include themify($themes) {
+        background-color: themed("colorBackground");
+        // color: themed("colorTextAdditional");
+      }
+
+      & > :nth-child(2n) {
+        border-right: 1px solid $color-black;
+      }
+      & > div {
+        flex: 1 1 0;
+
+        &.variables {
+          flex: 1 0 calc(35% - #{spacing(4)}); // flex-basis = 2 * padding left/right
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          // padding-left: 0px;
+          .variable {
+            cursor: pointer;
+            font-size: 15px;
+            &.disabled {
+              cursor: not-allowed;
+              @include themify($themes) {
+                color: $inactive-gray;
+                // color: darken(themed("colorTextAdditional"), 15%);
+              }
+            }
+          }
+          cursor: pointer;
+          span.anticon {
+            padding-top: 2px;
+            font-size: 16px;
+            position: relative;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              background-color: currentColor;
+              width: 0.5em;
+              height: 0.5em;
+              top: 25%;
+              left: 25%;
+            }
+
+            &.selected {
+              color: $color-primary;
+              &::before {
+                display: none;
+              }
+            }
+            & svg {
+              border-radius: 0.25em; // 0.25 * parrent_font-size = 4px
+            }
+          }
+          div {
+            display: flex;
+            width: 100%;
+            .variable {
+              margin-right: auto;
+              margin-left: spacing(1);
+            }
+          }
+        }
+      }
+      .time-play {
+        // flex: 1 1 200px;
+        flex: 1 0 calc(40% - #{spacing(4)}); // flex-basis = 2 * padding left/right
+
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        & > div {
+          text-align: center;
+        }
+        .player-buttons {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 4px;
+
+          & span {
+            font-size: 28px !important;
+            padding: 2px !important;
+          }
+        }
+        .player-input {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // margin-right: 15px;
+          // span {
+          //   font-size: 14px;
+          // }
+
+          &:first-child {
+            margin: 4px; // like margin of camera/snapshot icon
+            padding: 6px; // like padding of camera/snapshot icon
+          }
+          .time-input {
+            position: relative;
+            display: flex;
+
+            input {
+              // color: white;
+              // background-color: transparent;
+              // border: none;
+              // outline: 1px solid #d5d5d5;
+              // margin: 0px 5px;
+
+              background-color: transparent;
+              border: none;
+              @include themify($themes) {
+                color: themed("colorBubble");
+                border: 1px solid themed("colorTextAdditional");
+              }
+
+              margin: 0 spacing(1.5);
+              margin-left: 22px;
+              display: flex;
+              width: spacing(11);
+              padding: 4px 6px;
+              padding-left: 10px;
+              border-radius: 4px;
+              height: 30px;
+              @include retina {
+                font-size: 13px;
+                line-height: 3;
+              }
+              &:focus {
+                @include themify($themes) {
+                  border: 1px solid themed("colorBubble");
+                }
+              }
+            }
+            // &:after {
+            //   // color: #d5d5d5;
+            //   // position: absolute;
+            //   // right: 30px;
+            //   // top: 0px;
+            //   // content: "/120";
+
+            //   @include themify($themes) {
+            //     color: themed("colorTextAdditional");
+            //   }
+            //   // color: #757575;
+            //   position: absolute;
+            //   right: 40px;
+            //   top: 18%;
+            //   content: "/24";
+            // }
+
+            & .time-label {
+              position: absolute;
+              right: 40px;
+              height: 100%;
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+        .player-slider {
+          .slider {
+            max-width: 75%;
+            margin: 0 auto;
+          }
+        }
+        .rc-slider {
+          margin-top: 8px;
+        }
+      }
+      .simulatin-loader {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin: 0 auto;
+        max-width: 250px;
+        width: 100%;
+        border-radius: spacing(2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        flex: 0 0 calc(25% - #{spacing(12)}); // flex-basis = 2 * padding left/right
+        @include themify($themes) {
+          border: 2px solid themed("colorText");
+          color: themed("colorText");
+        }
+        // flex: 0 0 15%;
+
+        &.active {
+          @include themify($themes) {
+            border-color: fade-out(themed("colorBubble"), 0.55);
+            color: fade-out(themed("colorBubble"), 0.55);
+          }
+        }
+        & * {
+          // margin-bottom: 5px;
+          font-size: spacing(2.5);
+          font-weight: bold;
+          @include themify($themes) {
+            color: inherit !important;
+          }
+        }
+        .anticon {
+          padding-top: 2px;
+        }
+      }
+    }
+    // }
+  }
+
+  .detail-bar {
+    flex: 0 0 22%;
+    padding: spacing(1);
+
+    display: grid;
+    // max-height: calc(100vh - #{$padding-container});
+    grid-template-rows: min-content 1fr;
+    grid-gap: spacing(3);
+
+    @include retina {
+      flex: 0 0 25%;
+      grid-gap: spacing(1);
+    }
+    @include themify($themes) {
+      background-color: lighten(themed("colorBackground"), 10%);
+    }
+
+    .detail-chart {
+      & > p {
+        padding: spacing(1);
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  // simulation styles
+  .simulation {
+    flex: 1;
+
+    &__container {
+      height: 100%;
+
+      & > * {
+        margin: spacing(2) 0;
+        padding-bottom: spacing(2);
+      }
+    }
+
+    &__sidebar {
+      padding-left: 0;
+      padding-right: 0;
+
+      max-height: calc(100vh - 124px);
+
+      @include themify($themes) {
+        border-right: 0.5px solid themed("colorBackground");
+      }
+
+      @include retina {
+        border-right: 0.5px solid fade-out($inactive-gray, 0.5) !important;
+      }
+    }
+
+    &__view {
+      // background-color: burlywood;
+      display: flex;
+      flex-direction: column;
+      & > h4 {
+        margin: spacing(1) 0 spacing(2);
+      }
+    }
+
+    &__plot {
+      display: grid;
+      overflow-y: auto;
+
+      &__cards {
+        // display: flex;
+        // flex-direction: row;
+        // flex-wrap: wrap;
+        // overflow-y: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-gap: 2rem;
+      }
+
+      &__card {
+        cursor: pointer;
+        @include themify($themes) {
+          background-color: themed("colorBackground");
+        }
+
+        // display: grid;
+        // grid-template-rows: min-content 1fr;
+        // flex: 0 1 calc(33.33% - #{spacing(6)});
+        // margin: spacing(3);
+        // margin-bottom: spacing(3);
+        // margin-top: 0;
+
+        & p {
+          font-weight: 500;
+          margin-bottom: spacing(1);
+          @include themify($themes) {
+            color: themed("colorTextAdditional");
+          }
+        }
+
+        &.new {
+          display: grid;
+          grid-template-rows: min-content 1fr;
+          background-color: transparent;
+          cursor: unset;
+          & p {
+            opacity: 0.5;
+            color: $inactive-gray !important;
+          }
+        }
+
+        & .card-body {
+          // padding: spacing(1);
+          @include themify($themes) {
+            background-color: themed("colorBackground");
+          }
+        }
+        & .card__title {
+          margin-bottom: 0 !important;
+        }
+      }
+
+      &__chart {
+        padding: spacing(1.5);
+        padding-top: spacing(1);
+
+        @include themify($themes) {
+          border: 1px solid themed("colorBackground");
+        }
+
+        &.selected {
+          border: 1px solid $color-primary;
+        }
+
+        &.new {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          grid-gap: 1rem;
+          padding: 1rem;
+          justify-content: center;
+          align-items: center;
+          min-height: 290px;
+          @include retina {
+            @include themify($themes) {
+              border-color: fade-out(themed("colorTextAdditional"), 0.5);
+            }
+          }
+
+          @include themify($themes) {
+            color: darken(themed("colorBubble"), 45%);
+          }
+          & .icon__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.2;
+            cursor: pointer;
+            &:hover {
+              opacity: 1;
+            }
+          }
+          // & > * {
+          //   // for svg icons
+          //   height: 100%;
+          //   font-size: 80px;
+          //   cursor: pointer;
+          //   display: grid;
+          //   justify-content: center;
+          //   align-items: center;
+          //   &:hover {
+          //     opacity: 1; // for images
+
+          //     @include themify($themes) {
+          //       color: themed("colorBubble");
+          //     }
+          //   }
+          // }
+        }
+      }
+
+      &__panel {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-rows: 1fr 0.5px 1fr;
+        padding: 0;
+        padding-bottom: 34px;
+
+        &__setting {
+          display: grid;
+          grid-template-rows: min-content 1fr;
+        }
+
+        &__tabs {
+          display: grid;
+          grid-gap: 0.5rem;
+          grid-template-columns: 1fr 1fr;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          margin-bottom: spacing(2);
+          line-height: 2;
+        }
+
+        &__data {
+          display: grid;
+          grid-gap: 1rem;
+        }
+
+        & > * {
+          overflow-y: auto;
+          padding: 0 spacing(2);
+        }
+
+        & p {
+          cursor: pointer;
+          text-transform: capitalize;
+          @include themify($themes) {
+            color: themed("colorTextAdditional");
+          }
+
+          &:hover {
+            @include themify($themes) {
+              color: themed("colorBubble");
+            }
+          }
+
+          &.light {
+            @include themify($themes) {
+              color: fade-out(themed("colorBubble"), 0.5);
+            }
+          }
+          &.selected {
+            @include themify($themes) {
+              color: themed("colorBubble");
+            }
+          }
+        }
+
+        &__divider {
+          margin: 0 spacing(2);
+          @include themify($themes) {
+            background-color: themed("colorBackground");
+          }
+          @include retina {
+            background-color: fade-out($inactive-gray, 0.5) !important;
+          }
+        }
+      }
+
+      &__collapse {
+        padding: spacing(1) spacing(2);
+        text-align: center;
+      }
+
+      &__input {
+        // margin-bottom: spacing(2);
+
+        & .input-group {
+          margin: 0 !important;
+        }
+      }
+    }
+
+    & .time-frame {
+      margin-top: spacing(2);
+
+      & > :not(:last-child) {
+        margin-bottom: spacing(1);
+      }
+
+      &__title {
+        margin-bottom: 12px !important;
+      }
+
+      &__content {
+        display: grid;
+        grid-template-columns: minmax(40px, max-content) max-content 1fr;
+        grid-gap: 0.5rem;
+        align-items: center;
+        justify-items: start;
+
+        & > * {
+          @include themify($themes) {
+            color: themed("colorTextAdditional");
+          }
+        }
+      }
+
+      &__change {
+        display: grid;
+        font-size: 14px;
+        & > :first-child {
+          margin-bottom: -4px;
+        }
+      }
+    }
+
+    &__table {
+      margin-bottom: spacing(3);
+
+      &.full-height {
+        max-height: 66vh;
+        @include retina {
+          max-height: 71vh;
+        }
+        @include full-screen {
+          max-height: 71vh;
+        }
+      }
+
+      &__input {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        color: inherit !important;
+        // @include themify($themes) {
+        //   background: themed("colorBackground") !important;
+        //   color: themed("colorText") !important;
+        // }
+      }
+
+      & tr:hover {
+        background: none !important;
+      }
+
+      & th,
+      td {
+        font-weight: 300;
+        text-align: center;
+        min-width: 8vw;
+        @include themify($themes) {
+          border: 0.5px solid themed("colorBackground");
+        }
+      }
+
+      & th {
+        color: white;
+        white-space: nowrap;
+        @include themify($themes) {
+          background-color: themed("inboxButtonBackground");
+        }
+      }
+
+      & td {
+        background-color: transparent !important;
+        color: $active-gray;
+
+        &.editable {
+          padding: 0;
+          // background-color: white !important;
+          color: $color-primary !important;
+        }
+      }
+    }
+
+    &__button {
+      margin: 0;
+      padding: spacing(0.5) spacing(1.5);
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      &:active {
+        color: inherit !important;
+        border-color: inherit !important;
+        transform: translateY(0.5px);
+      }
+      @include themify($themes) {
+        color: #000;
+      }
+    }
+
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 0 spacing(2);
+
+      .input-group {
+        position: relative;
+        margin-bottom: spacing(2);
+      }
+
+      &.full-height {
+        max-height: 69vh;
+        @include full-screen {
+          max-height: 72vh;
+        }
+        @include retina {
+          max-height: 74vh;
+        }
+      }
+
+      &__child {
+        cursor: pointer;
+        text-transform: capitalize;
+        font-size: 0.875rem;
+        color: $inactive-gray;
+        border: 1px solid $inactive-gray;
+        border-radius: 14px !important;
+        background-color: transparent;
+
+        &:focus {
+          border-color: inherit;
+          box-shadow: none;
+        }
+        &.selected {
+          // color: $color-primary;
+          // border-color: $color-primary;
+          color: $active-gray;
+          border-color: #1f8705;
+        }
+      }
+
+      &__icons {
+        position: absolute;
+        z-index: 3;
+        font-size: 16px;
+        @include themify($themes) {
+          color: themed("colorTextAdditional");
+        }
+        &.selected {
+          @include themify($themes) {
+            color: themed("colorText");
+          }
+        }
+
+        &.loading {
+          right: 7px;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &.check {
+          right: 7px;
+        }
+      }
+    }
+
+    &__alert {
+      &--none {
+        @include themify($themes) {
+          color: themed("colorTextAdditional");
+        }
+      }
+    }
+
+    &__new {
+      text-align: center;
+      margin-top: spacing(2);
+
+      &__icon {
+        font-size: 1rem;
+        padding: spacing(1.5);
+        border-radius: 50%;
+        @include themify($themes) {
+          color: themed("colorTextAdditional");
+          border: 1px solid themed("colorTextAdditional");
+        }
+
+        &:hover {
+          @include themify($themes) {
+            color: themed("colorBubble");
+          }
+        }
+        &:focus,
+        :focus-visible {
+          outline: unset !important;
+        }
+      }
+    }
+  }
+}
+
+.nav-link {
+  padding: 1rem !important;
+}
+
+.custom {
+  &__table {
+    margin-bottom: spacing(3);
+
+    &.full-height {
+      max-height: 66vh;
+      @include retina {
+        max-height: 71vh;
+      }
+      @include full-screen {
+        max-height: 71vh;
+      }
+    }
+
+    &__input {
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      color: inherit !important;
+      // @include themify($themes) {
+      //   background: themed("colorBackground") !important;
+      //   color: themed("colorText") !important;
+      // }
+    }
+
+    & tr:hover {
+      background: none !important;
+    }
+
+    & th,
+    td {
+      font-weight: 300;
+      text-align: center;
+      min-width: 8vw;
+      @include themify($themes) {
+        border: 0.5px solid themed("colorBackground");
+      }
+    }
+
+    & th {
+      color: white !important;
+      white-space: nowrap;
+      @include themify($themes) {
+        background-color: themed("inboxButtonBackground");
+      }
+      & > * {
+        display: block !important;
+        text-align: center;
+      }
+    }
+
+    & td {
+      background-color: transparent !important;
+      color: $active-gray !important;
+
+      &.editable {
+        padding: 0;
+        // background-color: white !important;
+        color: $color-primary !important;
+      }
+    }
+    &.auto-height {
+      height: auto !important;
+    }
+  }
+}
+
+.nivo-tooltop {
+  & > * {
+    color: $active-gray;
+  }
+}

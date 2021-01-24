@@ -1,0 +1,123 @@
+.geo-icon {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px; //same as geo-button
+  text-align: center;
+  min-width: 24px;
+  padding: 6px;
+  margin: 4px;
+  box-shadow: none;
+  border-color: transparent !important;
+  border-radius: 4px;
+  border-width: 1px;
+  color: $active-gray;
+  background: transparent;
+  background-image: none;
+
+  @include retina {
+    font-size: 22px;
+  }
+
+  &:hover {
+    color: $active-gray;
+    background-color: $inactive-gray;
+  }
+
+  &:active {
+    color: $color-black;
+    background-color: $color-primary;
+  }
+
+  &.selected {
+    color: $color-black;
+    background-color: $color-primary;
+  }
+
+  &--link {
+    @extend .geo-icon;
+    @include link-mixin;
+    padding: 5px;
+
+    @include retina {
+      padding: 8px;
+    }
+  }
+}
+
+.icon {
+  &__button{
+    font-weight: unset !important;
+    font-size: 15px;
+    padding: 1px 4px;
+    margin-right: 8px;
+    @include retina {
+      font-size: 16px;
+      padding: 3.2px 6.32px;
+    }
+  }
+
+  &__button {
+    @include button-mixin;
+  }
+
+
+  // &__link {
+  //   font-size: 16px;
+  //   padding: 4px 6px;
+  //   margin-right: 8px;
+  //   @include link-mixin;
+  //   @include retina {
+  //     font-size: 17px;
+  //   }
+  // }
+
+  &__toggle--side-bar {
+    @include icon;
+    width: 1em;
+    height: 1em;
+    border: 1px solid !important;
+    border-color: inherit !important;
+    &::after {
+      top: -1px;
+      right: -1px;
+      width: 0.3em;
+      height: 106%;
+      border-radius: inherit;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__toggle--bottom-bar {
+    @include icon;
+    width: 1em;
+    height: 1em;
+    border: 1px solid !important;
+    border-color: inherit !important;
+    &::after {
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      width: 102%;
+      height: 0.3em;
+      border-radius: inherit;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &__toggle--xy {
+    @include icon;
+    width: 1em;
+    height: 1em;
+    border: 1px solid !important;
+    border-color: inherit !important;
+    &::after {
+      content: "XY";
+      width: 0.4em;
+      height: 100%;
+      background-color: transparent;
+      left: 33%;
+    }
+  }
+}

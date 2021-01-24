@@ -1,0 +1,28 @@
+.rtl-support {
+  .phone-input {
+    direction: ltr;
+    text-align: right;
+  }
+}
+
+.input-without-border-radius {
+  border-radius: unset;
+  margin-left: -1px;
+}
+
+.material-icon {
+  color: #605f7b !important;
+
+  &__active{
+  color: #F2AB1f !important;
+  }
+  // @include themify($themes) {
+  //   color: themed("colorIcon");
+  // }
+}
+
+.icon-button-material {
+  height: unset !important;
+  padding: 5px 10px !important;
+  border: none !important;
+}

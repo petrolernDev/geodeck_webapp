@@ -1,0 +1,29 @@
+
+// ---------- Utilities ----------//
+.border-radius-spacing-0 {
+    border-radius: spacing(0) !important;
+  }
+  .border-radius-spacing-1 {
+    border-radius: spacing(1) !important;
+  }
+  .border-radius-spacing-2 {
+    border-radius: spacing(2) !important;
+  }
+  .border-radius-spacing-3 {
+    border-radius: spacing(3) !important;
+  }
+  .border-radius-spacing-4 {
+    border-radius: spacing(4) !important;
+  }
+  
+  .color-primary {
+    color: $color-primary !important;
+  }
+
+  .color-active-gray {
+    color: $active-gray !important;
+  }
+
+  .color-inactive-gray {
+    color: $inactive-gray !important;
+  }

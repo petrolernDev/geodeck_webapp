@@ -1,0 +1,19 @@
+.geo-button {
+  font-size: 0.875rem;
+  // font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.25px;
+  text-transform: capitalize;
+  text-align: center;
+  box-sizing: border-box;
+  // height: 36px;
+  padding: 8px 12px;
+  // margin-right: 12px;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  @include button-mixin;
+}
+

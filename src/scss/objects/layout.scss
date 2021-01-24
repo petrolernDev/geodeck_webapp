@@ -1,0 +1,84 @@
+.container {
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    max-width: 1630px;
+  }
+}
+
+.container__wrap {
+  @include directify($directions) {
+    #{directed('padding-left')}: 0px;
+  }
+  padding-top: $topber-height;
+  padding-bottom: $footer-height;
+  &.exception {
+    padding-top: $topber-height;
+    padding-bottom: $footer-height;
+  }
+  min-height: 100vh;
+  transition: padding-left 0.3s;
+
+  @include themify($themes) {
+    background: themed("colorBackgroundBody");
+  }
+
+  @media screen and (min-width: 576px) {
+    @include directify($directions) {
+      #{directed('padding-left')}: 250px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    padding-top: 150px;
+  }
+}
+
+.layout {
+  &.layout--collapse {
+    & + .container__wrap {
+      @include directify($directions) {
+        #{directed('padding-left')}: 0px;
+      }
+
+      @media screen and (min-width: 576px) {
+        @include directify($directions) {
+          #{directed('padding-left')}: $toolbar-width;
+        }
+      }
+    }
+  }
+
+  &.layout--top-navigation {
+    & + .container__wrap {
+      @media screen and (min-width: 576px) {
+        @include directify($directions) {
+          #{directed('padding-left')}: 0px;
+        }
+      }
+    }
+  }
+}
+
+.page-title {
+  margin-top: spacing(3) !important;
+}
+
+.footer-layout {
+  background-color: $nav-background;
+  color: $active-gray;
+  height: $footer-height;
+  font-size: 12px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 10px; // (32px - (font-size * line height)) / 2
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 121;
+  & .powered-by {
+    color: $color-primary;
+  }
+}

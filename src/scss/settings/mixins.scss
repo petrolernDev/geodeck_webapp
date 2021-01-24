@@ -1,0 +1,188 @@
+// based on Bootstrap4 breakpoints
+@mixin respond($breakpoint) {
+  @if $breakpoint==sm {
+    @media only screen and (min-width: 36em) {
+      //  ≥ 576px
+      @content;
+    }
+  }
+  @if $breakpoint==md {
+    @media only screen and (min-width: 48em) {
+      //  ≥ 768px
+      @content;
+    }
+  }
+  @if $breakpoint==lg {
+    @media only screen and (min-width: 62em) {
+      //  ≥ 992px
+      @content;
+    }
+  }
+  @if $breakpoint==xl {
+    @media only screen and(min-width:75em) {
+      //  ≥ 1200px
+      @content;
+    }
+  }
+}
+
+// based on Bootstrap4 breakpoints
+@mixin respond-max($breakpoint) {
+  @if $breakpoint==xs {
+    @media only screen and(max-width:36em) {
+      //  576px
+      @content;
+    }
+  }
+  @if $breakpoint==sm {
+    @media only screen and (max-width: 48em) {
+      //  768px
+      @content;
+    }
+  }
+  @if $breakpoint==md {
+    @media only screen and (max-width: 62em) {
+      //  992px
+      @content;
+    }
+  }
+
+  @if $breakpoint==lg {
+    @media only screen and (max-width: 75em) {
+      //  1200px
+      @content;
+    }
+  }
+  @if $breakpoint==xl {
+    @media only screen and(min-width:112.5em) {
+      //  1800px
+      @content;
+    }
+  }
+}
+
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 227dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin full-screen {
+  @media all and (display-mode: fullscreen) {
+    @content;
+  }
+}
+
+@mixin aspect-ratio-parrent($ratio) {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+
+  @if $ratio== "fullHd" {
+    padding-top: 56.25%;
+  }
+
+  @if $ratio== "hd" {
+    padding-top: 75%;
+  }
+}
+
+@mixin aspect-ratio-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin icon {
+  position: relative;
+  background-color: inherit;
+  // width: 1em;
+  // height: 1em;
+  font-size: 28px;
+
+  @include retina {
+    font-size: 34px;
+  }
+  &::after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    background-color: currentColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@mixin button-mixin { // for user create icons
+  font-weight: 500;
+  box-shadow: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-right: 0px !important;
+  }
+
+  color: $active-gray;
+  border: 1px solid $active-gray;
+  background-color: transparent;
+
+  &:hover {
+    // color: $inactive-gray;
+    border-color: $inactive-gray;
+    background-color: $inactive-gray;
+  }
+
+  &:active {
+    color: $color-black;
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  &.selected {
+    color: $color-black;
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  &.disable {
+    cursor: not-allowed;
+    border-color: $inactive-gray;
+    background-color: $inactive-gray;
+  }
+}
+
+@mixin link-mixin { // for ant design icons
+
+  color: $active-gray;
+  border: none !important;
+  background: none !important;
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $color-primary;
+  }
+
+  &.selected {
+    color: $color-primary;
+  }
+
+  &.disable {
+    cursor: not-allowed;
+    color: $inactive-gray;
+  }
+}
+
+.MuiInput-underline:before {
+  border-bottom-color: $inactive-gray !important;
+}
