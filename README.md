@@ -16,11 +16,12 @@ To get started follow this steps:
 1. Install [Node](https://nodejs.org/en/) v12.3.1, [npm](https://www.npmjs.com/get-npm) 6.9.0.
 2. Download and open project.
 3. Install packages: ```npm i```.
-4. Start project locally: ```npm start```.
+4. Start project locally: ```npm start```. Depending on your system, it may take 15 minutes for the server to start the application.
 5. Navigate to http://localhost:3000/ on your browser.
 6. Login using `demo` username and `demo` password.
 
-**Note: this is just a prototype and not a final software!**
+**Note 1: this is just a prototype and not a final software!**
+**Note 2: The current version has only been tested on Chrome browser for Screen size of 15"**
 
 ## Hardware Requirements
 
