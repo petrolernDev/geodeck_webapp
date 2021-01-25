@@ -20,8 +20,9 @@ To get started follow this steps:
 5. Navigate to http://localhost:3000/ on your browser.
 6. Login using `demo` username and `demo` password.
 
-**Note 1: this is just a prototype and not a final software!**
-**Note 2: The current version has only been tested on Chrome browser for Screen size of 15"**
+**Note 1: this is just a prototype and not a final software!**  
+
+**Note 2: The current version has only been tested on Chrome browser for larger than 13" screen**
 
 ## Hardware Requirements
 
