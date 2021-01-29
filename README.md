@@ -24,6 +24,16 @@ To get started follow this steps:
 
 **Note 2: The current version has only been tested on Chrome browser for larger than 13" screen**
 
+## Docker usage
+If you prefer running the app using Docker, you can user Dockerfile included.  
+
+1. you can build the Dockerfile using `docker build -t geodeck:dev .`
+2. You can run the docker with the script in `run.sh`.  Depending on your system, it may take 15 minutes for the server to start the application.
+3. Navigate to http://localhost:3001/ on your browser.
+5. Login using `demo` username and `demo` password.
+
+**Note 1: Note that we have not tested the docker on windows machines. Please use MacOS or linux**  
+
 ## Hardware Requirements
 
 To run GeoDeck, we require the minimum requirements for WebGL which are quite low. Your computer hardware needs to have a minimum of 2 GB system memory and a video graphics card that supports WebGL. It is recommended that you have at least 4 GB of system memory. Your hardware should have a nonmobile graphics card with at least 512 MB of video memory.
