@@ -28,11 +28,13 @@ To get started follow this steps:
 If you prefer running the app using Docker, you can user Dockerfile included.  
 
 1. you can build the Dockerfile using `docker build -t geodeck:dev .`
-2. You can run the docker with the script in `run.sh`.  Depending on your system, it may take 15 minutes for the server to start the application.
+2. You can run the docker with the script in `./run.sh`.  Depending on your system, it may take 15 minutes for the server to start the application.
 3. Navigate to http://localhost:3001/ on your browser.
 5. Login using `demo` username and `demo` password.
 
 **Note 1: Note that we have not tested the docker on windows machines. Please use MacOS or linux**  
+
+**Note 2: The current version has only been tested on Chrome browser for larger than 13" screen**  
 
 ## Hardware Requirements
 
